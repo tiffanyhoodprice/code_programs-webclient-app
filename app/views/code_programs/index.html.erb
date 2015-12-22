@@ -1,25 +1,18 @@
-<table>
-<tr>
-  <th>Organization name</th>
-  <th>Website</th>
-  <th>Description</th>
-  <th>Population Focus</th>
-  <th>Time Commitment</th>
-  <th>Cost</th>
-  <th>Locations</th>
-</tr>
+<div class="container"><div class="row">
+  <% @code_programs.each do |code_program| %>
+  <div class="col-md-4">
+    <div class="product-box">
+      
+        <p><strong>Org Name: </strong><a href="/code_programs/<%= code_program.id %>"><%= code_program.organization_name %></p></a>
+        <p><strong>Website: </strong><a href="<%= code_program.website %>"><%= code_program.website %></a></p>
+        <p><strong>Description: </strong><%= code_program.mission_description %></p>
+        <p><strong>Population Focus: </strong><%= code_program.population_focus %></p>
+        <p><strong>Time Commitment: </strong><%= code_program.time_commitment %></p>
+        <p><strong>Cost: </strong><%= code_program.cost %></p>
+        <p><strong>Locations: </strong><%= code_program.locations %></p>
 
-<% @code_programs.each do |code_program| %>
-
-<tr>
-<td><%= code_program.organization_name %></td>
-<td><%= code_program.website %></td>
-<td><%= code_program.mission_description %></td>
-<td><%= code_program.population_focus %></td>
-<td><%= code_program.time_commitment %></td>
-<td><%= code_program.cost %></td>
-<td><%= code_program.locations %></td>
-</tr>
-<% end %>
-
-</table>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
