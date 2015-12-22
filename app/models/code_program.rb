@@ -25,13 +25,13 @@ attr_accessor :id, :keywords, :organization_name, :website, :mission_description
   end
 
   def self.find(id)
-    code_program_hash = Unirest.get("http://localhost:3000/api/v1/code_programs/#{id}.json").body
+    code_program_hash = Unirest.get("#{ENV['API_BASE_URL']}/code_programs/#{id}.json").body
     CodeProgram.new(code_program_hash)
   end
 
   def self.all
     code_programs = []
-    code_program_hashes = Unirest.get("http://localhost:3000/api/v1/code_programs.json").body
+    code_program_hashes = Unirest.get("#{ENV['API_BASE_URL']}/code_programs.json").body
     code_program_hashes.each do |code_program_hash|
       code_programs << CodeProgram.new(code_program_hash)
     end
@@ -39,14 +39,14 @@ attr_accessor :id, :keywords, :organization_name, :website, :mission_description
   end
 
   def destroy 
-    Unirest.delete("http://localhost:3000/api/v1/code_programs/#{id}.json").body
+    Unirest.delete("#{ENV['API_BASE_URL']}/code_programs/#{id}.json").body
     # redirect_to "/api/v1/code_programs"
     #not self because this is an instance method
   end
 
 
   def self.create(attributes)
-    code_program_hash = Unirest.post("http://localhost:3000/api/v1/code_programs.json", headers: {"Accept" => "application/json"}, 
+    code_program_hash = Unirest.post("#{ENV['API_BASE_URL']}/code_programs.json", headers: {"Accept" => "application/json"}, 
       parameters: attributes).body  
       #               keywords: params[:keywords], 
       #               organization_name: params[:organization_name], 
@@ -72,7 +72,7 @@ attr_accessor :id, :keywords, :organization_name, :website, :mission_description
   end
 
   def update(attributes)
-    code_program_hash = Unirest.patch("http://localhost:3000/api/v1/code_programs/#{id}.json", headers: {"Accept" => "application/json"}, parameters: attributes).body
+    code_program_hash = Unirest.patch("#{ENV['API_BASE_URL']}/code_programs/#{id}.json", headers: {"Accept" => "application/json"}, parameters: attributes).body
     # CodeProgram.new(employee_hash)
   end
 end
