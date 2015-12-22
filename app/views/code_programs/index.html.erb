@@ -1,0 +1,25 @@
+<table>
+<tr>
+  <th>Organization name</th>
+  <th>Website</th>
+  <th>Description</th>
+  <th>Population Focus</th>
+  <th>Time Commitment</th>
+  <th>Cost</th>
+  <th>Locations</th>
+</tr>
+
+<% @code_programs.each do |code_program| %>
+
+<tr>
+<td><%= code_program.organization_name %></td>
+<td><%= code_program.website %></td>
+<td><%= code_program.mission_description %></td>
+<td><%= code_program.population_focus %></td>
+<td><%= code_program.time_commitment %></td>
+<td><%= code_program.cost %></td>
+<td><%= code_program.locations %></td>
+</tr>
+<% end %>
+
+</table>
