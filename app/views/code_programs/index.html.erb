@@ -1,6 +1,7 @@
-<div class="container"><div class="row">
+<div class="container">
+  <div class="row">
   <% @code_programs.each do |code_program| %>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="product-box">
       
         <p><strong>Org Name: </strong><a href="/code_programs/<%= code_program.id %>"><%= code_program.organization_name %></p></a>
