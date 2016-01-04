@@ -24,6 +24,14 @@ attr_accessor :id, :keywords, :organization_name, :website, :mission_description
     @when_founded = hash["when_founded"]
   end
 
+  def self.search(search_params)
+    code_programs = []
+    code_program_hashes = Unirest.get("#{ENV['API_BASE_URL']}/code_programs/search/#{search_params}.json", headers: {"X-User-Email": "#{ENV['USER_EMAIL']}", "Authorization": "Token token=#{ENV['AUTHORIZATION']}"}).body
+    code_program_hashes.each do |code_program_hash|
+      code_programs << CodeProgram.new(code_program_hash)
+    end
+  end
+
   def self.find(id)
     code_program_hash = Unirest.get("#{ENV['API_BASE_URL']}/code_programs/#{id}.json", headers: {"X-User-Email": "#{ENV['USER_EMAIL']}", "Authorization": "Token token=#{ENV['AUTHORIZATION']}"}).body
     CodeProgram.new(code_program_hash)

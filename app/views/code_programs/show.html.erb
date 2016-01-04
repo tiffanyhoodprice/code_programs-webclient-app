@@ -1,9 +1,20 @@
-<ul>
+<div class="container">
+<div class="row">
+<p><strong>Org Name: </strong><%= @code_program.organization_name %></p>
+<p><strong>Website: </strong><a href="<%= @code_program.website %>" target='_blank'><%= @code_program.website %></a></p>
+<p><strong>Description: </strong><%= @code_program.mission_description %></p>
+<p><strong>Population Focus: </strong><%= @code_program.population_focus %></p>
+<p><strong>Languages/Courses: </strong><%= @code_program.languages_courses %></p>
+<p><strong>Time Commitment: </strong><%= @code_program.time_commitment %></p>
+<p><strong>Cost: </strong><%= @code_program.cost %></p>
+<p><strong>Locations: </strong><%= @code_program.locations %></p>
+<p><strong>Address: </strong><%= @code_program.address %>, <%= @code_program.city %>, <%= @code_program.state %> <%= @code_program.zip %></p>
+<p><strong>Leadership/Contact: </strong><%= @code_program.leadership_contact %></p>
+  <p><strong>Title: </strong><%= @code_program.title %></p>
+        <p><strong>Email: </strong><%= @code_program.email %></p>
+        <p><strong>Phone: </strong><%= @code_program.phone_number %></p>
+        <p><strong>Year Founded: </strong><%= @code_program.when_founded %></p>
 
-<li><%= @code_program.organization_name %></li>
-<li><%= @code_program.website %></li>
-</ul>
-
-
-
-<%= link_to "Delete Me", "/code_programs/#{params[:id]}", method: :delete %>
+<button type="button" class="btn btn-default"><%= link_to "Edit", "/code_programs/#{params[:id]}/edit" %></button>
+</div>
+</div>

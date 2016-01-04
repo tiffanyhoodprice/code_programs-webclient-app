@@ -1,19 +1,7 @@
-<div class="container">
-  <div class="row">
-  <% @code_programs.each do |code_program| %>
-  <div class="col-md-6">
-    <div class="product-box">
-      
-        <p><strong>Org Name: </strong><a href="/code_programs/<%= code_program.id %>"><%= code_program.organization_name %></p></a>
-        <p><strong>Website: </strong><a href="<%= code_program.website %>"><%= code_program.website %></a></p>
-        <p><strong>Description: </strong><%= code_program.mission_description %></p>
-        <p><strong>Population Focus: </strong><%= code_program.population_focus %></p>
-        <p><strong>Time Commitment: </strong><%= code_program.time_commitment %></p>
-        <p><strong>Cost: </strong><%= code_program.cost %></p>
-        <p><strong>Locations: </strong><%= code_program.locations %></p>
-
-      </div>
-    </div>
-  <% end %>
-</div>
+<div class="jumbotron">
+  <div class="container">
+    <h1>Welcome to Coding Nation</h1>
+    <p>Here, you can search for resources around the U.S.A. and online to help you learn to code.</p>
+  <p><a class="btn btn-primary btn-lg" href="/code_programs/all.html" role="button">Find Resources</a></p>
+  </div>
 </div>

@@ -1,10 +1,25 @@
 class CodeProgramsController < ApplicationController
+  def programs
+      @code_programs = CodeProgram.all
+  end
+
   def show
     @code_program = CodeProgram.find(params[:id])
   end
+  
+  def search
+    @search_term = params[:search]
+    puts "stuff"
+    p @search_term
+    @code_programs = CodeProgram.search("#{@search_term}")
 
-  def index
-    @code_programs = CodeProgram.all
+    # render :index
+    # render json: @code_programs
+    # OR mission_description LIKE ? OR population_focus LIKE ?
+  end
+
+   def index
+  #   @code_programs = CodeProgram.all
   end
 
   def create

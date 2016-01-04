@@ -1,6 +1,9 @@
-<h1>Edit Employee
+<div class="container">
+<div class="row">
 
-</h1><%= form_tag "/code_programs/#{@code_program.id}", method: :patch do %>
+  <h2>Edit Code Program</h2>
+
+<%= form_tag "/code_programs/#{@code_program.id}", method: :patch do %>
 
 <div>
   <%= label_tag :organization_name %>
@@ -9,7 +12,7 @@
 
 <div>
   <%= label_tag :mission_description %>
-  <%= text_field_tag :mission_description, @code_program.mission_description %>
+  <%= text_area_tag :mission_description, @code_program.mission_description %>
 </div>
 
 <div>
@@ -19,7 +22,7 @@
 
 <div>
   <%= label_tag :population_focus %>
-  <%= text_field_tag :population_focus, @code_program.population_focus %>
+  <%= text_area_tag :population_focus, @code_program.population_focus %>
 </div>
 
 <div>
@@ -29,17 +32,17 @@
 
 <div>
   <%= label_tag :cost %>
-  <%= text_field_tag :cost, @code_program.cost %>
+  <%= text_area_tag :cost, @code_program.cost %>
 </div>
 
 <div>
   <%= label_tag :languages_courses %>
-  <%= text_field_tag :languages_courses, @code_program.languages_courses %>
+  <%= text_area_tag :languages_courses, @code_program.languages_courses %>
 </div>
 
 <div>
   <%= label_tag :locations %>
-  <%= text_field_tag :locations, @code_program.locations %>
+  <%= text_area_tag :locations, @code_program.locations %>
 </div>
 
 <div>
@@ -94,3 +97,5 @@
 
 <%= submit_tag "Update Coding Program" %>
 <% end %>
+</div>
+</div>

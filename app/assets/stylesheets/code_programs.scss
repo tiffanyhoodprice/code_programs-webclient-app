@@ -2,17 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.grid-item { width: 200px; }
+
+.grid-item--width2 { width: 400px; }
+
+.truncate {
+  display: block;
+  display: -webkit-box;
+  height: auto;
+  margin: 0 auto;
+  line-height: 1.4;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .product-box {
-  background: lightgrey;
-  border-radius: 10px;
+  background: white;
+  border-style:solid;
+  border-top-width:10px;
+  border-color:orange;
+  // border-radius: 10px;
   height: auto;
   margin: 5px;
-  padding: 5px 10px 10px;
+  padding: 5px 10px 10px 5px;
+  position:relative;
+  box-sizing: border-box;
+  // display:inline-block;
+  margin-bottom: 0;
 }
 
 nav {
-    background-color: #839496;
-    margin-bottom: 10px;
-    overflow: hidden;
-    padding: 0.02px 0;
+  background-color: #839496;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.jumbotron {
+  background-color: rgba(255,153,0, 0.7);
+  text-align: center;
+}
+
+.footer {
+  max-height:150px;
+  padding-left:20px;
+  background-color: #F8F8F8;
+  text-align: center;
+  padding: 0;
+}
+
+p.footer{
+  font-size: 80%;
+  display: inline-block;
+  text-align: left
+}
+
+#copyright {
+  padding:30px;
+  height: 4em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
