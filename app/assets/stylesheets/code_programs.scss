@@ -1,10 +1,22 @@
 // Place all the styles related to the code_programs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.alert {
+  background: lightgreen;
+  width: 300px;
+  margin-left: 300px;
+}
+.new_program {
+  background: lightblue;
+}
 
-.grid-item { width: 200px; }
+.grid-item { 
+  width: 200px; 
+}
 
-.grid-item--width2 { width: 400px; }
+.grid-item--width2 { 
+  width: 400px; 
+}
 
 .truncate {
   display: block;
@@ -16,6 +28,9 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  -o-text-overflow: ellipsis; /* required for Opera */
+  -ms-text-overflow: ellipsis;  /* required for IE8, allegedly */
+  -moz-binding: url('/assets/xml/ellipsis.xml#ellipsis');    /* for Firefox; details here */
 }
 
 .product-box {
@@ -31,6 +46,7 @@
   box-sizing: border-box;
   // display:inline-block;
   margin-bottom: 0;
+
 }
 
 nav {

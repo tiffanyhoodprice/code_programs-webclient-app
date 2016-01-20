@@ -1,9 +1,11 @@
-<div id="container" class='cols'>
+
+   <div id="container" class='cols'>
      <!--  <div class="row"> -->
-  <div class="grid">
-    <% @code_programs.each do |code_program| %>
+     <div class="grid">
+      <% @code_programs.each do |code_program| %>
       <div class="grid-item">
         <div class="product-box">
+          <% if code_program.keyword %>
           <p><strong>Org Name: </strong><a href="<%= code_program.website %>" target="_blank"><%= code_program.organization_name %></p></a>
           <p class='truncate'><strong>Description: </strong>
             <%= code_program.mission_description %><br /></p>
@@ -12,11 +14,9 @@
           <p><strong>Keywords: </strong><%= code_program.keywords %></p>
         </div>
         </div>
-    <% end %>
-  </div>
-</div>
-<br />
-<br />
+      <% end %>
+      </div>
+      </div>
 
 
 

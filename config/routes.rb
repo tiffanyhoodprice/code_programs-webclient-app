@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get '/code_programs/all' => 'code_programs#programs'
-  get '/code_programs/search' => 'code_programs#search'
+  root 'pages#index'
+  post '/code_programs/search' => 'code_programs#search'
+  post '/code_programs/:id/delete' => 'code_programs#destroy'
   resources :code_programs
+
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

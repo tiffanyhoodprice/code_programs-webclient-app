@@ -26,11 +26,13 @@ attr_accessor :id, :keywords, :organization_name, :website, :mission_description
 
   def self.search(search_params)
     code_programs = []
-    code_program_hashes = Unirest.get("#{ENV['API_BASE_URL']}/code_programs/search/#{search_params}.json", headers: {"X-User-Email": "#{ENV['USER_EMAIL']}", "Authorization": "Token token=#{ENV['AUTHORIZATION']}"}).body
+    code_program_hashes = Unirest.post("#{ENV['API_BASE_URL']}/code_programs/search.json/?search_params=#{search_params}", headers: {"X-User-Email": "#{ENV['USER_EMAIL']}", "Authorization": "Token token=#{ENV['AUTHORIZATION']}"}).body
     code_program_hashes.each do |code_program_hash|
       code_programs << CodeProgram.new(code_program_hash)
     end
+    return code_programs
   end
+ 
 
   def self.find(id)
     code_program_hash = Unirest.get("#{ENV['API_BASE_URL']}/code_programs/#{id}.json", headers: {"X-User-Email": "#{ENV['USER_EMAIL']}", "Authorization": "Token token=#{ENV['AUTHORIZATION']}"}).body
@@ -81,6 +83,6 @@ attr_accessor :id, :keywords, :organization_name, :website, :mission_description
 
   def update(attributes)
     code_program_hash = Unirest.patch("#{ENV['API_BASE_URL']}/code_programs/#{id}.json", headers: {"Accept" => "application/json", "X-User-Email": "#{ENV['USER_EMAIL']}", "Authorization": "Token token=#{ENV['AUTHORIZATION']}"}, parameters: attributes).body
-    # CodeProgram.new(employee_hash)
+    # CodeProgram.new(code_program_hash)
   end
 end

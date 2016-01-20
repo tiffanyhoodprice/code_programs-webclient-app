@@ -1,101 +1,110 @@
 <div class="container">
-<div class="row">
+<center>
+  <h2>Edit Program</h2>
+  <div class="col-md-6">
 
-  <h2>Edit Code Program</h2>
+    <%= form_tag "/code_programs/#{@code_program.id}", method: :patch do %>
 
-<%= form_tag "/code_programs/#{@code_program.id}", method: :patch do %>
+      <div>
+        <%= label_tag :organization_name %>
+        <%= text_field_tag :organization_name, @code_program.organization_name  %>
+      </div>
 
-<div>
-  <%= label_tag :organization_name %>
-  <%= text_field_tag :organization_name, @code_program.organization_name  %>
+      <div>
+        <%= label_tag :mission_description %>
+        <%= text_area_tag :mission_description, @code_program.mission_description %>
+      </div>
+
+      <div>
+        <%= label_tag :website %>
+        <%= text_field_tag :website, @code_program.website %>
+      </div>
+
+      <div>
+        <%= label_tag :population_focus %>
+        <%= text_area_tag :population_focus, @code_program.population_focus %>
+      </div>
+
+      <div>
+        <%= label_tag :time_commitment %>
+        <%= text_field_tag :time_commitment, @code_program.time_commitment %>
+      </div>
+
+      <div>
+        <%= label_tag :cost %>
+        <%= text_area_tag :cost, @code_program.cost %>
+      </div>
+
+      <div>
+        <%= label_tag :languages_courses %>
+        <%= text_area_tag :languages_courses, @code_program.languages_courses %>
+      </div>
+
+      <div>
+        <%= label_tag :locations %>
+        <%= text_area_tag :locations, @code_program.locations %>
+    </div>
+  </div>
+
+  <div class='col-md-6'>
+
+    <div>
+      <%= label_tag :leadership_contact %>
+      <%= text_field_tag :leadership_contact, @code_program.leadership_contact %>
+    </div>
+
+    <div>
+      <%= label_tag :title %>
+      <%= text_field_tag :title, @code_program.title %>
+    </div>
+
+    <div>
+      <%= label_tag :email %>
+      <%= text_field_tag :email, @code_program.email %>
+    </div>
+
+    <div>
+      <%= label_tag :phone_number %>
+      <%= text_field_tag :phone_number, @code_program.phone_number %>
+    </div>
+
+    <div>
+      <%= label_tag :address %>
+      <%= text_field_tag :address, @code_program.address %>
+    </div>
+
+    <div>
+      <%= label_tag :city %>
+      <%= text_field_tag :city, @code_program.city %>
+    </div>
+
+    <div>
+      <%= label_tag :state %>
+      <%= text_field_tag :state, @code_program.state %>
+    </div>
+
+    <div>
+      <%= label_tag :zip %>
+      <%= text_field_tag :zip, @code_program.zip %>
+    </div>
+
+    <div>
+      <%= label_tag :when_founded %>
+      <%= text_field_tag :when_founded, @code_program.when_founded %>
+    </div>
+
+    <div>
+      <%= label_tag :keywords %>
+      <%= text_area_tag :keywords, @code_program.keywords %>
+    </div>
+  </div>
+</center>
+<center>
+  <div class='col-md-12'>
+    <%= submit_tag "Update Coding Program" %>
+  </div>
+    <% end %>
+</center>
 </div>
-
-<div>
-  <%= label_tag :mission_description %>
-  <%= text_area_tag :mission_description, @code_program.mission_description %>
-</div>
-
-<div>
-  <%= label_tag :website %>
-  <%= text_field_tag :website, @code_program.website %>
-</div>
-
-<div>
-  <%= label_tag :population_focus %>
-  <%= text_area_tag :population_focus, @code_program.population_focus %>
-</div>
-
-<div>
-  <%= label_tag :time_commitment %>
-  <%= text_field_tag :time_commitment, @code_program.time_commitment %>
-</div>
-
-<div>
-  <%= label_tag :cost %>
-  <%= text_area_tag :cost, @code_program.cost %>
-</div>
-
-<div>
-  <%= label_tag :languages_courses %>
-  <%= text_area_tag :languages_courses, @code_program.languages_courses %>
-</div>
-
-<div>
-  <%= label_tag :locations %>
-  <%= text_area_tag :locations, @code_program.locations %>
-</div>
-
-<div>
-<%= label_tag :leadership_contact %>
-<%= text_field_tag :leadership_contact, @code_program.leadership_contact %>
-</div>
-
-<div>
-<%= label_tag :title %>
-<%= text_field_tag :title, @code_program.title %>
-</div>
-
-<div>
-<%= label_tag :email %>
-<%= text_field_tag :email, @code_program.email %>
-</div>
-
-<div>
-<%= label_tag :phone_number %>
-<%= text_field_tag :phone_number, @code_program.phone_number %>
-</div>
-
-<div>
-<%= label_tag :address %>
-<%= text_field_tag :address, @code_program.address %>
-</div>
-
-<div>
-<%= label_tag :city %>
-<%= text_field_tag :city, @code_program.city %>
-</div>
-
-<div>
-<%= label_tag :state %>
-<%= text_field_tag :state, @code_program.state %>
-</div>
-
-<div>
-<%= label_tag :zip %>
-<%= text_field_tag :zip, @code_program.zip %>
-</div>
-
-<div>
-<%= label_tag :when_founded %>
-<%= text_field_tag :when_founded, @code_program.when_founded %>
-</div>
-
-<div>
-<%= label_tag :keywords %>
-<%= text_field_tag :keywords, @code_program.keywords %>
-</div>
-
-<%= submit_tag "Update Coding Program" %>
-<% end %>
-</div>
-</div>
+<br />
+<br />
